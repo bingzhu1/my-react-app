@@ -4,9 +4,9 @@ import './App.css';
 // first winner check 
 function calculateWinner(squares) {
   const patterns = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8],  
-    [0, 3, 6], [1, 4, 7], [2, 5, 8],  
-    [0, 4, 8], [2, 4, 6]             
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6]
   ];
 
   for (const [a, b, c] of patterns) {
@@ -48,14 +48,14 @@ function Board({ squares, onPlay, winningLine = [], locked = false }) {
         value={squares[i]}
         onClick={() => onPlay(i)}
         highlight={winningLine.includes(i)}
-        disabled={locked || !!squares[i]} 
+        disabled={locked || !!squares[i]}
       />
     );
   }
 
   return (
     <div>
-      
+
       <div className="board-row">{[0, 1, 2].map(renderSquare)}</div>
       <div className="board-row">{[3, 4, 5].map(renderSquare)}</div>
       <div className="board-row">{[6, 7, 8].map(renderSquare)}</div>
@@ -76,7 +76,7 @@ export default function App() {
   const isDraw = !winner && current.squares.every(Boolean);
 
   function handlePlay(index) {
-   // prevent overide 
+    // prevent overide 
     if (winner || current.squares[index]) return;
 
     const next = current.squares.slice();
@@ -104,7 +104,7 @@ export default function App() {
 
     if (moveIdx > 0 && step.lastMove != null) {
       const { row, col } = indexToRowCol(step.lastMove);
-      description += ` (r${row}, c${col})`; 
+      description += ` (r${row}, c${col})`;
     }
 
     return (
