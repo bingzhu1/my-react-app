@@ -40,3 +40,38 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+.game {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.board-row { display: flex; }
+
+.square {
+  width: 64px;
+  height: 64px;
+  font-size: 28px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ccc;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.square:disabled {
+  cursor: not-allowed;
+  color: #888;
+}
+
+.square.winning { background: #ffe58f; }
+
+.panel { display: grid; gap: 8px; }
+.status { font-weight: 700; }
+.controls { display: flex; gap: 8px; }
+ol { padding-left: 18px; margin: 0; }
